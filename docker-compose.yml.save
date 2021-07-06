@@ -1,0 +1,16 @@
+version: '2.0'
+services:
+  PerfRun:
+      container_name: ${PROJECT_NAME}_${BUILD_NUMBER}
+      image: krkrishna011/apachejmeter-master:v0.2
+      volumes:
+            - /home/psstadmin/APTS/BitBucket_APTS_Repo/apts:/opt/jmeter/bin/sharedfolder/Script
+            - /home/psstadmin/APTS/Report:/opt/jmeter/bin/sharedfolder/Report
+           #- /home/psstadmin/APTS/JmeterResult1/validation4.jtl:/opt/jmeter/bin/sharedfolder/Report/${PROJECT_NAME}_${Extra_params}_${BUILD_NUMBER}.jtl
+      environment:
+            - PROJECT_NAME=APTS
+            - BUILD_NUMBER=11
+            - Extra_params=JmeterRun
+      #command: tail -f /dev/null 
+      #command: opt/jmeter/bin/jmeter-server
+      command: sh +x /opt/jmeter/bin/sharedfolder/Script/script_jmeter.sh
