@@ -8,8 +8,6 @@ services:
             - /opt/aptsac/jmeter/workspace/report:/opt/jmeter/bin/sharedfolder/Report
             - /opt/aptsac/jmeter/workspace/results:/opt/jmeter/bin/Results
       environment:
-            - PROJECT_NAME=${PROJECT_NAME}
-            - BUILD_NUMBER=${BUILD_NUMBER}
             - Extra_params=${Extra_params}
             - Users=${Users}
             - Duration=${Duration}
