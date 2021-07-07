@@ -11,6 +11,4 @@ services:
             - Extra_params=${Extra_params}
             - Users=${Users}
             - Duration=${Duration}
-      #command: tail -f /dev/null 
-      #command: opt/jmeter/bin/jmeter-server
-      command: sh +x /opt/aptsac/jmeter/workspace/${PROJECT_NAME}/script_jmeter.sh
+      command: sh +x /opt/jmeter/bin/sharedfolder/Script/script_jmeter.sh
