@@ -11,6 +11,9 @@ services:
         - Extra_params=${Extra_params}
         - Users=${Users}
         - Duration=${Duration}
+        - BUILD_NUMBER=${BUILD_NUMBER}
+        - PROJECT_NAME=${PROJECT_NAME}
+        
       command: sh +x /opt/jmeter/bin/sharedfolder/Script/script_jmeter.sh
     
     filebeatapts:
