@@ -23,7 +23,7 @@ filebeat.inputs:
   paths:
     - /var/log/jmeter/validation.jtl
   fields:
-    document_type: jmeter
+    type: jmeter
   fields_under_root: true
 
   # Change to true to enable this input configuration.
