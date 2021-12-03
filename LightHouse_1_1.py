@@ -64,7 +64,7 @@ for InputfileUrls in inputfile.readlines():
             #Litehouse Arguments for Windows
             #LitehouseArgs = "--output=json --output=html --emulated-form-factor"
             LitehouseArgs = TestUrl + ' ' + LitehouseArgs + '' + emulatertype
-            command = 'lighthouse ' + LitehouseArgs
+            command = '~/.nvm/versions/node/v16.13.1/bin/lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
             pr, iny = os.popen4(command)
             print (pr)
