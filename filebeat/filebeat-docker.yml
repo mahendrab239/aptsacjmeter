@@ -26,7 +26,7 @@ filebeat.inputs:
     type: jmeter
   fields_under_root: true
   
-  - type: log
+- type: log
   enabled: true
   paths:
     - /var/log/jmeter/lighthouse.csv
