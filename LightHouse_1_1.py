@@ -67,6 +67,8 @@ for InputfileUrls in inputfile.readlines():
             command = 'lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
             pr, iny = os.popen4(command)
+            print (pr)
+            print("Iny " iny)
             #HtmlOutputFilepath = r''
             JsonOutputFilepath = r''
             for data in iny.readlines():
