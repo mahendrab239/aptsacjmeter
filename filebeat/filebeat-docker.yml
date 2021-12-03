@@ -18,7 +18,7 @@ filebeat.inputs:
 # you can use different inputs for various configurations.
 # Below are the input specific configurations.
 
-- type: jmeter
+- type: log
   enabled: true
   paths:
     - /var/log/jmeter/validation.jtl
