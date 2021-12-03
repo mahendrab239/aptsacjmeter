@@ -71,6 +71,7 @@ for InputfileUrls in inputfile.readlines():
             JsonOutputFilepath = r''
             for data in iny.readlines():
                 if 'Printer json output written to ' in data:
+                    print("data test = %s" % (data))
                     JsonOutputFilepath = data.split('written to')[1].strip('\n').strip(' ')
                 if 'Printer html output written to' in data:
                     HtmlOutputFilepath = data.split('written to')[1].strip('\n')
