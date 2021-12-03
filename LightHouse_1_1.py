@@ -67,7 +67,7 @@ for InputfileUrls in inputfile.readlines():
             command = 'lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
             pr, iny = os.popen4(command)
-            HtmlOutputFilepath = r''
+            #HtmlOutputFilepath = r''
             JsonOutputFilepath = r''
             for data in iny.readlines():
                 if 'Printer json output written to ' in data:
@@ -76,8 +76,9 @@ for InputfileUrls in inputfile.readlines():
                     HtmlOutputFilepath = data.split('written to')[1].strip('\n')
 
             # print("LightHouse test has been finished and Output file has been Created at below Path \nJsonfilepath = %s \n HTMLfilepath = %s" %(JsonOutputFilepath,HtmlOutputFilepath))
-            print("LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (HtmlOutputFilepath))
+            print("LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (JsonOutputFilepath ))
             FinalJsonFilesList.append(JsonOutputFilepath)
+            print("test - LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (JsonOutputFilepath ))
             FinalHtmlFilesList.append(HtmlOutputFilepath)
             # '''
 
