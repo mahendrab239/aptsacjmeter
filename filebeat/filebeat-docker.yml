@@ -25,6 +25,14 @@ filebeat.inputs:
   fields:
     type: jmeter
   fields_under_root: true
+  
+  - type: log
+  enabled: true
+  paths:
+    - /var/log/jmeter/lighthouse.csv
+  fields:
+    type: lighthouse
+  fields_under_root: true
 
   # Change to true to enable this input configuration.
  # enabled: false
