@@ -67,8 +67,8 @@ for InputfileUrls in inputfile.readlines():
             command = '~/.nvm/versions/node/v16.13.1/bin/lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
             pr, iny = os.popen4(command)
-            print (pr)
-            print("Iny %s" % (iny))
+            #print (pr)
+            #print("Iny %s" % (iny))
             #HtmlOutputFilepath = r''
             JsonOutputFilepath = r''
             for data in iny.readlines():
@@ -82,7 +82,7 @@ for InputfileUrls in inputfile.readlines():
             # print("LightHouse test has been finished and Output file has been Created at below Path \nJsonfilepath = %s \n HTMLfilepath = %s" %(JsonOutputFilepath,HtmlOutputFilepath))
             print("LightHouse test has been finished and Output file has been Created at below Path \nJSONfilepath = %s" % (JsonOutputFilepath ))
             FinalJsonFilesList.append(JsonOutputFilepath)
-            print("test - LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (HtmlOutputFilepath ))
+            print("LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (HtmlOutputFilepath ))
             FinalHtmlFilesList.append(HtmlOutputFilepath)
             # '''
 
