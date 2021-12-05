@@ -72,17 +72,17 @@ for InputfileUrls in inputfile.readlines():
             #HtmlOutputFilepath = r''
             JsonOutputFilepath = r''
             for data in iny.readlines():
-                print("data test = %s" % (data))
+                #print("data test = %s" % (data))
                 if 'Printer json output written to ' in data:
-                    print("data test = %s" % (data))
+                    #print("data test = %s" % (data))
                     JsonOutputFilepath = data.split('written to')[1].strip('\n').strip(' ')
                 if 'Printer html output written to' in data:
                     HtmlOutputFilepath = data.split('written to')[1].strip('\n')
 
             # print("LightHouse test has been finished and Output file has been Created at below Path \nJsonfilepath = %s \n HTMLfilepath = %s" %(JsonOutputFilepath,HtmlOutputFilepath))
-            print("LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (JsonOutputFilepath ))
+            print("LightHouse test has been finished and Output file has been Created at below Path \nJSONfilepath = %s" % (JsonOutputFilepath ))
             FinalJsonFilesList.append(JsonOutputFilepath)
-            print("test - LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (JsonOutputFilepath ))
+            print("test - LightHouse test has been finished and Output file has been Created at below Path \nHTMLfilepath = %s" % (HtmlOutputFilepath ))
             FinalHtmlFilesList.append(HtmlOutputFilepath)
             # '''
 
