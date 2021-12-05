@@ -118,7 +118,7 @@ for InputfileUrls in inputfile.readlines():
             for MainMat in Scorestitles:
                 MainMatrixdata = MainPerformanceMatrix[MainMat]
                 PerformanceTitle = MainMatrixdata['title']
-                score = float(MainMatrixdata['score'])
+                score = MainMatrixdata['score']
                 # if score is null place to value
                 if score:
                     PerformanceScore = int(score * 100)
