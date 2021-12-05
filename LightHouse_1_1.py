@@ -170,8 +170,8 @@ for InputfileUrls in inputfile.readlines():
                 values.append(buildnumber)
 
                 #For the first time, add headers
-                if mode == 'wb':
-                    csv_writerObj.writerow(Headers)
+                #if mode == 'wb':
+                    #csv_writerObj.writerow(Headers)
                 
                 #Write result values
                 csv_writerObj.writerow(values)
