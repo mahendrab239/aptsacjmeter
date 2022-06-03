@@ -22,11 +22,11 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /opt/aptsac/jmeter/workspace/APTSAC:/report
+        - /opt/aptsac/jmeter/workspace/APTSAC:/
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
 
-      command: sh +x /report/lighthouse.sh
+      command: sh +x /lighthouse.sh
     
     filebeatapts:
       container_name: filebeat-container1
