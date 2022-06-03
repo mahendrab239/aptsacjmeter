@@ -22,10 +22,9 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
+        - /home/psstadmin:/report
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
-        - PROJECT_NAME=${PROJECT_NAME}
 
       command: sh +x /report/lighthouse.sh
     
