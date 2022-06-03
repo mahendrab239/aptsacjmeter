@@ -20,8 +20,8 @@ services:
       container_name: lighthouse
       image: mahireddy23/lighthouse:v0.1
       volumes:
-        - /opt/aptsac/jmeter/workspace/report:/report
-      command: sh lighthouse.sh
+        - /home/psstadmin:/report
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html
     
     filebeatapts:
       container_name: filebeat-container1
