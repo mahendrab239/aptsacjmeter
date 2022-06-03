@@ -23,7 +23,7 @@ services:
         context: lighthouse/
       volumes:
         - /home/psstadmin:/report
-      command: lighthouse --chrome-flags="--headless --disable-dev-shm-usage --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://careers.publicissapient.com/ --output=html
+      command: sh lighthouse.sh
     
     filebeatapts:
       container_name: filebeat-container1
