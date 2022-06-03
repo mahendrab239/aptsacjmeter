@@ -22,7 +22,7 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /home/psstadmin:/report
+        - /opt/aptsac/jmeter/workspace/APTSAC:/report
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
 
