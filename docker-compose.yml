@@ -15,6 +15,13 @@ services:
         - PROJECT_NAME=${PROJECT_NAME}
         
       command: sh +x /opt/jmeter/bin/sharedfolder/Script/script_jmeter.sh
+      
+    lighthouse:
+      container_name: lighthouse
+      image: mahireddy23/lighthouse:v0.1
+      volumes:
+        /home/ec2-user/report:/report
+      command: python2 LightHouse_1_1.py -i URL.csv -b ${BUILD_NUMBER}
     
     filebeatapts:
       container_name: filebeat-container
