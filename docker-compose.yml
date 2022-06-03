@@ -21,7 +21,7 @@ services:
       image: mahireddy23/lighthouse:v0.1
       volumes:
         - /home/psstadmin:/report
-      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://careers.publicissapient.com/ --output=html
     
     filebeatapts:
       container_name: filebeat-container1
