@@ -69,7 +69,7 @@ for InputfileUrls in inputfile.readlines():
             pr, iny = os.popen4(command)
             #print (pr)
             #print("Iny %s" % (iny))
-            #HtmlOutputFilepath = r''
+            HtmlOutputFilepath = r''
             JsonOutputFilepath = r''
             for data in iny.readlines():
                 #print("data test = %s" % (data))
