@@ -22,7 +22,7 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /home/psstadmin:/report
+        - /home/psstadmin/:/report
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
 
