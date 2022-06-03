@@ -1,7 +1,7 @@
 version: '2.0'
 services:
-    node1:
-      container_name: ${PROJECT_NAME}
+    jmeter:
+      container_name: jmeter
       image: krkrishna011/apachejmeter-master:v0.2
       volumes:
         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/opt/jmeter/bin/sharedfolder/Script
@@ -18,7 +18,9 @@ services:
       
     lighthouse:
       container_name: lighthouse
-      image: mahireddy23/lighthouse:v0.1
+      image: lighthouse:v0.1
+      build:
+        context: lighthouse/
       volumes:
         - /home/psstadmin:/report
       command: lighthouse --chrome-flags="--headless --disable-dev-shm-usage --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://careers.publicissapient.com/ --output=html
@@ -34,5 +36,5 @@ services:
         - /opt/aptsac/jmeter/workspace/report/:/var/log/jmeter/
       command: ["--strict.perms=false"]
       depends_on:
-        - node1
+        - jmeter
         
