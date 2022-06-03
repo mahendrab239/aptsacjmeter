@@ -27,7 +27,7 @@ services:
       environment:
         - PROJECT_NAME=${PROJECT_NAME}
         - BUILD_NUMBER=${BUILD_NUMBER}
-      command: sh lighthouse.sh
+      command: sh +x /report/lighthouse.sh
     
     filebeatapts:
       container_name: filebeat-container1
