@@ -23,6 +23,9 @@ services:
         context: lighthouse/
       volumes:
         - /home/psstadmin:/report
+      environment:
+        - BUILD_NUMBER=${BUILD_NUMBER}
+
       command: sh +x /report/lighthouse.sh
     
     filebeatapts:
