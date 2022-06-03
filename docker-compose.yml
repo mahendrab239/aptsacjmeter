@@ -22,11 +22,11 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /opt/aptsac/jmeter/workspace/APTSAC:/
+        - /opt/aptsac/jmeter/workspace/APTSAC:/report
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
 
-      command: sh +x /lighthouse.sh
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html
     
     filebeatapts:
       container_name: filebeat-container1
