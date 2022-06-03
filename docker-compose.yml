@@ -22,8 +22,7 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /opt/aptsac/jmeter/workspace/Test_Lighthouse:/report
-        - /opt/aptsac/lighthouse/report:/report
+        - /home/psstadmin:/report
       command: sh +x /report/lighthouse.sh
     
     filebeatapts:
