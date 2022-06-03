@@ -10,4 +10,3 @@ RUN yum install -y nodejs \
     && yum install -y wget \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm \
     && yum -y localinstall google-chrome-stable_current_x86_64.rpm
-WORKDIR /
