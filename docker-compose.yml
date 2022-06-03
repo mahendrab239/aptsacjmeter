@@ -22,11 +22,8 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
+        - /opt/aptsac/jmeter/workspace/Test_Lighthouse:/report
         - /opt/aptsac/lighthouse/report:/report
-      environment:
-        - PROJECT_NAME=${PROJECT_NAME}
-        - BUILD_NUMBER=${BUILD_NUMBER}
       command: sh +x /report/lighthouse.sh
     
     filebeatapts:
