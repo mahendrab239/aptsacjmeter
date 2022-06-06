@@ -18,9 +18,9 @@ services:
       
     lighthouse:
       container_name: lighthouse
-      image: lighthouse:v0.1
+      image: lighthouse:ubuntu
       build:
-        context: lighthouse/
+        context: lighthouseUbuntu/
       volumes:
         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
       environment:
