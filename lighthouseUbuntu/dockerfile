@@ -1,0 +1,13 @@
+FROM ubuntu:18.04
+RUN apt-get update \
+	&& apt clean all \
+	&& apt install -y curl \
+	&& apt install -y sudo \
+	&& apt install -y bash
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs \
+	&& npm install -g lighthouse \
+	&& apt install -y wget \
+	&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+	&& sudo apt install -y ./google-chrome-stable_current_amd64.deb
+WORKDIR /report  
