@@ -20,7 +20,6 @@ services:
       
     Lighthouse:
       container_name: lighthouse
-      user: root
       image: lighthouse:v9.5.0
       build:
         context: lighthouse/
