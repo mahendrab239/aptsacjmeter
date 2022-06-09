@@ -69,8 +69,8 @@ for InputfileUrls in inputfile.readlines():
             pr, iny = os.popen4(command)
             #print (pr)
             #print("Iny %s" % (iny))
-            HtmlOutputFilepath = /report/lighthouseReport.html
-            JsonOutputFilepath = /report/lighthouseReport.json
+            HtmlOutputFilepath = r'/report/lighthouseReport.html'
+            JsonOutputFilepath = r'/report/lighthouseReport.json'
             for data in iny.readlines():
                 #print("data test = %s" % (data))
                 if 'Printer json output written to ' in data:
