@@ -58,7 +58,7 @@ for InputfileUrls in inputfile.readlines():
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --no-sandbox' --output=json --output=html --output-path '/report/lighthouseReport.json' --preset="
+            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --no-sandbox' --output=json --output=html --preset="
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
@@ -69,8 +69,8 @@ for InputfileUrls in inputfile.readlines():
             pr, iny = os.popen4(command)
             #print (pr)
             #print("Iny %s" % (iny))
-            HtmlOutputFilepath = r'/report/lighthouseReport.html'
-            JsonOutputFilepath = r'/report/lighthouseReport.json'
+            HtmlOutputFilepath = r'/report'
+            JsonOutputFilepath = r'/report'
             for data in iny.readlines():
                 #print("data test = %s" % (data))
                 if 'Printer json output written to ' in data:
