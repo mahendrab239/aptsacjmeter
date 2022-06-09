@@ -1,6 +1,7 @@
 FROM centos:centos7 
 RUN yum -y update \
     && yum clean all \
+    && yum install -y python \
     && yum install -y curl \
     && yum install -y sudo \
     && yum install -y bash 
