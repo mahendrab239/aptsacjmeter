@@ -58,7 +58,7 @@ for InputfileUrls in inputfile.readlines():
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --output=json --output=html --preset="
+            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --no-sandbox' --output=json --output=html --output-path "/opt/aptsac/jmeter/workspace/APTSAC/" --preset="
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
@@ -321,6 +321,3 @@ elif (quotaexitstatus == 0 and compareresult == 1 ):
     print("Build fail due to baseline comparison")
     exit(1)
 '''
-
-
-
