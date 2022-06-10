@@ -28,6 +28,8 @@ services:
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
+      stdin_open: true
+      tty: true
 
       command: sh +x /report/lighthouse.sh
     
