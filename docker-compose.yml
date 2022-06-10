@@ -24,15 +24,15 @@ services:
       build:
         context: lighthouse/
       volumes:
-        - /home/psstadmin:/report
+        - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
 
-      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=1 https://careers.publicissapient.com/ --output=html --output-path "/report/lightreport.html"
+      command: sh +x /report/lighthouse.sh
     
     filebeatapts:
-      container_name: filebeat-container1
+      container_name: filebeat-container
       user: root
       image: aptsac_filebeatapts
       build:
