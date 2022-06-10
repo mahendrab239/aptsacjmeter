@@ -32,7 +32,7 @@ services:
       command: sh +x /report/lighthouse.sh
     
     filebeatapts:
-      container_name: filebeat-container
+      container_name: filebeat-container1
       user: root
       image: aptsac_filebeatapts
       build:
