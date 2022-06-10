@@ -25,13 +25,14 @@ services:
         context: lighthouse/
       volumes:
         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
+        - /opt/aptsac/jmeter/workspace/report:/report/LighthouseReport_${BUILD_NUMBER}.html
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
       stdin_open: true
       tty: true
 
-      command: sh +x /report/lighthouse.sh
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html --output-path "/report/LighthouseReport_${BUILD_NUMBER}.html"
     
     filebeatapts:
       container_name: filebeat-container1
