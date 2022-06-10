@@ -31,7 +31,7 @@ services:
       stdin_open: true
       tty: true
 
-      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html --output-path "/report/Lighthousereport.html"
     
     filebeatapts:
       container_name: filebeat-container1
