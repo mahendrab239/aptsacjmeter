@@ -29,7 +29,7 @@ services:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
 
-      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://careers.publicissapient.com/ --output=html --output-path "/report/lightreport.html"
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=1 https://careers.publicissapient.com/ --output=html --output-path "/report/lightreport.html"
     
     filebeatapts:
       container_name: filebeat-container1
