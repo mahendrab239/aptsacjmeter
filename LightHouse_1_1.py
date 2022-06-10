@@ -65,13 +65,13 @@ for InputfileUrls in inputfile.readlines():
             #LitehouseArgs = "--output=json --output=html --emulated-form-factor"
             LitehouseArgs = TestUrl + ' ' + LitehouseArgs + '' + emulatertype
             #command = '~/.nvm/versions/node/v16.13.1/bin/lighthouse ' + LitehouseArgs
-            command = '/usr/bin/lighthouse --chrome-flags=--headless --disable-gpu --no-sandbox --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html --view'
+            command = '/usr/bin/lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
             pr, iny = os.popen4(command)
             #print (pr)
             #print("Iny %s" % (iny))
-            HtmlOutputFilepath = r''
-            JsonOutputFilepath = r''
+            HtmlOutputFilepath = r'/opt/aptsac/jmeter/workspace/report/'
+            JsonOutputFilepath = r'/opt/aptsac/jmeter/workspace/report/'
             for data in iny.readlines():
                 #print("data test = %s" % (data))
                 if 'Printer json output written to ' in data:
