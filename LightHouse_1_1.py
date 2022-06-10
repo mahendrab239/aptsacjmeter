@@ -58,7 +58,7 @@ for InputfileUrls in inputfile.readlines():
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --no-sandbox' --throttling.cpuSlowdownMultiplier=2 --output=json --output=html --preset="
+            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --no-sandbox' --throttling.cpuSlowdownMultiplier=2 --output=json --output=html --output-path '/report/LighthouseReport${BUILD_NUMBER}.html' --preset="
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
