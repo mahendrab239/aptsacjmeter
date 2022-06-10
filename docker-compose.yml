@@ -29,7 +29,7 @@ services:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
 
-      command: sh +x /report/lighthouse.sh
+      command: lighthouse --chrome-flags="--headless --disable-gpu --no-sandbox" --throttling.cpuSlowdownMultiplier=2 https://www.demoblaze.com --output=html --output-path "/report/lightreport.html"
     
     filebeatapts:
       container_name: filebeat-container1
