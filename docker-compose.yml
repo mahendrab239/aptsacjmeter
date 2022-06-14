@@ -25,6 +25,7 @@ services:
         context: lighthouse/
       volumes:
         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
+        - /opt/aptsac/jmeter/workspace/report:/report/Testoutput
 
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
