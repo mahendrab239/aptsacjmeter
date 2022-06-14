@@ -25,6 +25,7 @@ services:
         context: lighthouse/
       volumes:
         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/report
+
       environment:
         - BUILD_NUMBER=${BUILD_NUMBER}
         - PROJECT_NAME=${PROJECT_NAME}
@@ -32,8 +33,7 @@ services:
       tty: true
 
       command: sh +x /report/lighthouse.sh
-      volumes:
-        - /opt/aptsac/jmeter/workspace/report:/report
+
     
     filebeatapts:
       container_name: filebeat-container1
