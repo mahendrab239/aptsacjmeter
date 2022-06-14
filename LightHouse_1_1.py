@@ -134,7 +134,7 @@ for InputfileUrls in inputfile.readlines():
                 #OutPutCsvFileName = datetime.now().strftime('%Y_%m_%d-%H_%M_%S') + '.csv'
                 #filePath, filename = os.path.split(JsonOutputFilepath)
                 #Fullpath = filePath + '/Result_' + OutPutCsvFileName
-                OutPutCsvFileName = 'report/TestOutput/' + 'lighthouse' + '.csv'
+                OutPutCsvFileName = 'lighthouse' + '.csv'
                 Fullpath = OutPutCsvFileName
                 mode = 'wb'
                 Headers = ['TestUrl']
