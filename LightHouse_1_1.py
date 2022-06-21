@@ -19,7 +19,7 @@ try:
     ### Adding argument for buildnumber
     parser.add_argument("-b", "--buildnumber", help="Jenkins job will provide this input")
 
-    parser.add_argument("-a", "--agent", default="mobile", help="Pass the Browser Type like |mobile| or |desktop|")
+    parser.add_argument("-a", "--agent", default="desktop", help="Pass the Browser Type like |mobile| or |desktop|")
     parser.add_argument("-t", "--threshold", default="5", type=int, help="Pass threshold value for First Meaning full content in Seconds ")
     parser.add_argument("-q", "--quota", default="70", type=int, help="Set the Quota percentage for Test case fail or pass")
     #parser.add_argument("-b", "--baseline", help="If you want to compare the results Please provide Baseline Results File path")
