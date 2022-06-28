@@ -18,9 +18,7 @@ try:
 
     ### Adding argument for buildnumber
     parser.add_argument("-b", "--buildnumber", help="Jenkins job will provide this input")
-    
-    parser.add_argument("-f", "--form-factor", default="mobile", help="Pass the Browser Type like |mobile| or |desktop| in jenkins")
-  
+
     parser.add_argument("-a", "--agent", default="desktop", help="Pass the Browser Type like |mobile| or |desktop|")
     parser.add_argument("-t", "--threshold", default="5", type=int, help="Pass threshold value for First Meaning full content in Seconds ")
     parser.add_argument("-q", "--quota", default="70", type=int, help="Set the Quota percentage for Test case fail or pass")
@@ -57,7 +55,7 @@ for InputfileUrls in inputfile.readlines():
         if TestUrl.startswith('http'):
             #   ''''
             # emulatertype = 'desktop'      #    desktop and mobile
-            emulatertype = str(args.form-factor).strip(' ')
+            emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             #Litehouse Arguments for headerless Jenkins run
             LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-config.js --output=json --output=html --preset="
@@ -304,7 +302,7 @@ def CompareMatrix(Baselinefilemap, CurrentResultmap):
             print("Compare results save in file= %s" %(CompareResultFile))
             return (compareExitStatus)
     except BaseException as e:
-        print(e)    
+        print(e)
         return(1)
 
 #print(args.baseline)
