@@ -20,10 +20,8 @@ try:
     parser.add_argument("-b", "--buildnumber", help="Jenkins job will provide this input")
     
     # Choose Lighthouse config for Mobile or Desktop
-    #parser.add_argument("-c", "--configuration", default="mobile", help="Jenkins job will provide this input")
+    parser.add_argument("-c", "--Config", help="Jenkins job will provide this input")
     
-    parser.add_argument('config', choices=['mobile','desktop'])
-
     parser.add_argument("-a", "--agent", default="desktop", help="Pass the Browser Type like |mobile| or |desktop|")
     parser.add_argument("-t", "--threshold", default="5", type=int, help="Pass threshold value for First Meaning full content in Seconds ")
     parser.add_argument("-q", "--quota", default="70", type=int, help="Set the Quota percentage for Test case fail or pass")
@@ -51,7 +49,7 @@ else:
 Fullpath = ''
 FinalHtmlFilesList = []
 FinalJsonFilesList = []
-configtype = str(args.config).strip(' ')
+configtype = str(args.Config).strip(' ')
 print("Value of the configuration selected \"%s\"" % (configtype))
 thresholdValue = float(str(args.threshold).strip(' '))
 Quota = args.quota
