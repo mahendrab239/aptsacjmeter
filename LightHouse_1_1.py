@@ -49,8 +49,6 @@ else:
 Fullpath = ''
 FinalHtmlFilesList = []
 FinalJsonFilesList = []
-configtype = str(args.Config).strip(' ')
-print("Value of the configuration selected \"%s\"" % (configtype))
 thresholdValue = float(str(args.threshold).strip(' '))
 Quota = args.quota
 TestResult = {}
@@ -66,9 +64,9 @@ for InputfileUrls in inputfile.readlines():
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             print("Value of the buildnumber is  \"%s\"" % (buildnumber))
-            #configtype = str(args.configuration).strip(' ')
-                          
-            #print("Value of the configuration selected \"%s\"" % (configtype))
+            
+            configtype = str(args.Config).strip(' ')             
+            print("Value of the configuration selected \"%s\"" % (configtype))
                       
             #Litehouse Arguments for headerless Jenkins run
             
