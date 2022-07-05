@@ -19,8 +19,10 @@ try:
     ### Adding argument for buildnumber
     parser.add_argument("-b", "--buildnumber", help="Jenkins job will provide this input")
     
-    # Adding Lighthouse config for Mobile or Desktop
-    parser.add_argument("-c", "--configuration", default="mobile", help="Jenkins job will provide this input")
+    # Choose Lighthouse config for Mobile or Desktop
+    #parser.add_argument("-c", "--configuration", default="mobile", help="Jenkins job will provide this input")
+    
+    parser.add_argument('config', choices=['mobile','desktop'])
 
     parser.add_argument("-a", "--agent", default="desktop", help="Pass the Browser Type like |mobile| or |desktop|")
     parser.add_argument("-t", "--threshold", default="5", type=int, help="Pass threshold value for First Meaning full content in Seconds ")
@@ -28,6 +30,10 @@ try:
     #parser.add_argument("-b", "--baseline", help="If you want to compare the results Please provide Baseline Results File path")
     # read arguments from the command line
     args = parser.parse_args()
+    configtype = str(args.config).strip(' ')
+    
+    print("Value of the configuration selected \"%s\"" % (configtype))
+    
     #if args.baseline:
         #BaseLine = args.baseline
     #print(args.baseline)
@@ -35,6 +41,7 @@ try:
 except BaseException as baseeror:
     print(baseeror)
     exit(1)
+    
 
 #exit(0)
 if path.isfile(args.input):
@@ -60,9 +67,9 @@ for InputfileUrls in inputfile.readlines():
             # emulatertype = 'desktop'      #    desktop and mobile
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
-            configtype = str(args.configuration).strip(' ')
+            #configtype = str(args.configuration).strip(' ')
                           
-            print("Value of the configuration selected \"%s\"" % (configtype))
+            #print("Value of the configuration selected \"%s\"" % (configtype))
                       
             #Litehouse Arguments for headerless Jenkins run
             
