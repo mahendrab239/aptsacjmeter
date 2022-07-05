@@ -30,9 +30,7 @@ try:
     #parser.add_argument("-b", "--baseline", help="If you want to compare the results Please provide Baseline Results File path")
     # read arguments from the command line
     args = parser.parse_args()
-    configtype = str(args.config).strip(' ')
     
-    print("Value of the configuration selected \"%s\"" % (configtype))
     
     #if args.baseline:
         #BaseLine = args.baseline
@@ -53,6 +51,9 @@ else:
 Fullpath = ''
 FinalHtmlFilesList = []
 FinalJsonFilesList = []
+configtype = str(args.config).strip(' ')
+    
+    print("Value of the configuration selected \"%s\"" % (configtype))
 thresholdValue = float(str(args.threshold).strip(' '))
 Quota = args.quota
 TestResult = {}
