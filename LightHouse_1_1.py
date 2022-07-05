@@ -65,7 +65,13 @@ for InputfileUrls in inputfile.readlines():
             print("Value of the configuration selected \"%s\"" % (configtype))
                       
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configtype-config.js --output=json --output=html"
+            
+            if configtype = mobile:
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js --output=json --output=html"
+            else:
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
+            
+            #LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configtype-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
