@@ -61,8 +61,15 @@ for InputfileUrls in inputfile.readlines():
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
             configuration = str(args.configuration).strip(' ')
+            
+            #Append header & for build number
+            Headers.append('Configuration')
+            values.append(configuration)
+            
+            print("Value of the configuration \"%s\"" % (configuration))
+            
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-values.append(configuration)-config.js --output=json --output=html"
+            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configuration-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
