@@ -62,11 +62,9 @@ for InputfileUrls in inputfile.readlines():
             buildnumber = str(args.buildnumber).strip(' ')
             configuration = str(args.configuration).strip(' ')
             
-            #Append header & for build number
-            Headers.append('Configuration')
-            values.append(configuration)
-            
-            print("Value of the configuration \"%s\"" % (configuration))
+            config=['configuration']
+                      
+            print("Value of the configuration selected \"%s\"" % (config))
             
             #Litehouse Arguments for headerless Jenkins run
             LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configuration-config.js --output=json --output=html"
