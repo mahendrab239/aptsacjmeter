@@ -52,8 +52,7 @@ Fullpath = ''
 FinalHtmlFilesList = []
 FinalJsonFilesList = []
 configtype = str(args.config).strip(' ')
-    
-    print("Value of the configuration selected \"%s\"" % (configtype))
+print("Value of the configuration selected \"%s\"" % (configtype))
 thresholdValue = float(str(args.threshold).strip(' '))
 Quota = args.quota
 TestResult = {}
