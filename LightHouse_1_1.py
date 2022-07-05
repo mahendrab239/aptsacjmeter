@@ -65,6 +65,7 @@ for InputfileUrls in inputfile.readlines():
             # emulatertype = 'desktop'      #    desktop and mobile
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
+            print("Value of the buildnumber is  \"%s\"" % (buildnumber))
             #configtype = str(args.configuration).strip(' ')
                           
             #print("Value of the configuration selected \"%s\"" % (configtype))
