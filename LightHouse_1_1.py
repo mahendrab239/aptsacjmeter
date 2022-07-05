@@ -66,7 +66,7 @@ for InputfileUrls in inputfile.readlines():
                       
             #Litehouse Arguments for headerless Jenkins run
             
-            defaultConfig= mobile
+            defaultConfig = "mobile"
             
             if configtype == defaultConfig:
                 LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js --output=json --output=html"
