@@ -18,6 +18,9 @@ try:
 
     ### Adding argument for buildnumber
     parser.add_argument("-b", "--buildnumber", help="Jenkins job will provide this input")
+    
+    # Adding Lighthouse config for Mobile or Desktop
+    parser.add_argument("-c", "--configuration", default="mobile", help="Jenkins job will provide this input")
 
     parser.add_argument("-a", "--agent", default="desktop", help="Pass the Browser Type like |mobile| or |desktop|")
     parser.add_argument("-t", "--threshold", default="5", type=int, help="Pass threshold value for First Meaning full content in Seconds ")
@@ -57,8 +60,9 @@ for InputfileUrls in inputfile.readlines():
             # emulatertype = 'desktop'      #    desktop and mobile
             emulatertype = str(args.agent).strip(' ')
             buildnumber = str(args.buildnumber).strip(' ')
+            configuration = str(args.configuration).strip(' ')
             #Litehouse Arguments for headerless Jenkins run
-            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-config.js --output=json --output=html"
+            LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-values.append(configuration)-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
