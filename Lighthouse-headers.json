@@ -1,18 +1,3 @@
 {
-    "cookies":[
-{
-  "name":"common-cart-id","value":"6ab686be-cc82-4dce-9695-19d4cede21d5","domain":"www.cos.com"
-},
-{
-  "name":"allow-to-checkout","value":"true","domain":"www.cos.com"
-},
-{
-  "name":"touchpoint","value":"web","domain":"www.cos.com"
-},
-{
-  "name":"cookiePolicyViewed","value":"true","domain":"www.cos.com"
-},
-{
-  "name":"sales-channel","value":"CAU","domain":"www.cos.com"
+  "Cookie": "common-cart-id=ac2f6f12-e51d-47be-aec1-f4cef84712cc; X-Correlation-ID=e121e566-c4bf-4de5-953c-1e25c8536e1a; HMCORP_locale=en_AU; allow-to-checkout=true; touchpoint=web; cookiePolicyViewed=true; sales-channel=CAU; Domain=www.cos.com;"
 }
-]}
