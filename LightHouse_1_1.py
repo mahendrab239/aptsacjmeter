@@ -71,9 +71,9 @@ for InputfileUrls in inputfile.readlines():
             defaultConfig = "mobile"
             
             if configtype == defaultConfig:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js  --output=json --output=html"
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --extra-headers=/report/Lighthouse-headers.json  --config-path=/report/lighthouse-mobile-config.js  --output=json --output=html"
             else:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --extra-headers=/report/Lighthouse-headers.json  --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
             
             #LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configtype-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
