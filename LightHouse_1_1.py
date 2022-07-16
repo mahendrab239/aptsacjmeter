@@ -135,7 +135,7 @@ for InputfileUrls in inputfile.readlines():
             MainPerformanceMatrix = js['categories']
             for MainMat in Scorestitles:
                 MainMatrixdata = MainPerformanceMatrix[MainMat]
-                PerformanceTitle = MainMatrixdataMainMatrixdata['title']
+                PerformanceTitle = MainMatrixdata['title']
                 score = MainMatrixdata['score']
                 # if score is null place to value
                 if score:
