@@ -106,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'max-potential-fid']
+            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'max-potential-fid', 'total-blocking-time', 'cumulative-layout-shift', 'largest-contentful-paint']
             JsonFile = JsonOutputFilepath
 
             js = json.load(open(JsonFile))
@@ -135,7 +135,7 @@ for InputfileUrls in inputfile.readlines():
             MainPerformanceMatrix = js['categories']
             for MainMat in Scorestitles:
                 MainMatrixdata = MainPerformanceMatrix[MainMat]
-                PerformanceTitle = MainMatrixdata['title']
+                PerformanceTitle = MainMatrixdataMainMatrixdata['title']
                 score = MainMatrixdata['score']
                 # if score is null place to value
                 if score:
