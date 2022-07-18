@@ -1,23 +1,5 @@
 version: '2.0'
-services:
-#     JMeter:
-#       container_name: ${PROJECT_NAME}
-#       image: jmeter_java_image:5.2.1
-#       build:
-#         context: jmeter/
-#       volumes:
-#         - /opt/aptsac/jmeter/workspace/${PROJECT_NAME}:/opt/jmeter/bin/sharedfolder/Script
-#         - /opt/aptsac/jmeter/workspace/report:/opt/jmeter/bin/sharedfolder/Report
-#         - /opt/aptsac/jmeter/workspace/results:/opt/jmeter/bin/Results
-#       environment:
-#         - Extra_params=${Extra_params}
-#         - Users=${Users}
-#         - Duration=${Duration}
-#         - BUILD_NUMBER=${BUILD_NUMBER}
-#         - PROJECT_NAME=${PROJECT_NAME}
-        
-#       command: sh +x /opt/jmeter/bin/sharedfolder/Script/script_jmeter.sh
-      
+services: 
     Lighthouse:
       container_name: lighthouse
       image: lighthouse:v9.5.0
@@ -35,19 +17,3 @@ services:
       tty: true
 
       command: sh +x /report/lighthouse.sh
-
-    
-#     filebeatapts:
-#       container_name: filebeat-container1
-#       user: root
-#       image: aptsac_filebeatapts
-#       build:
-#         context: filebeat/
-#         args:
-#           ELK_VERSION: 7.9.2
-#       volumes:
-#         - /opt/aptsac/jmeter/workspace/report/:/var/log/jmeter/
-#       command: ["--strict.perms=false"]
-#       depends_on:
-#         - JMeter
-        
