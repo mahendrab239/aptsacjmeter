@@ -106,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift']
+            RequiresAduits = ['first-contentful-paint', 'largest-contentful-paint', 'first-meaningful-paint', 'speed-index', 'total-blocking-time', 'max-potential-fid', 'cumulative-layout-shift']
             JsonFile = JsonOutputFilepath
 
             js = json.load(open(JsonFile))
