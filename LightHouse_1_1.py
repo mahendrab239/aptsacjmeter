@@ -71,16 +71,16 @@ for InputfileUrls in inputfile.readlines():
             defaultConfig = "mobile"
             
             if configtype == defaultConfig:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js --output=json --output=html --preset="
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js --output=json --output=html"
             else:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-desktop-config.js --output=json --output=html --preset="
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
             
             #LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configtype-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
 
             #Litehouse Arguments for Windows
             #LitehouseArgs = "--output=json --output=html --emulated-form-factor"
-            LitehouseArgs = TestUrl + ' ' + LitehouseArgs + '' + emulatertype
+            LitehouseArgs = TestUrl + ' ' + LitehouseArgs
             #command = '~/.nvm/versions/node/v16.13.1/bin/lighthouse ' + LitehouseArgs
             command = '/usr/bin/lighthouse ' + LitehouseArgs
             print("Going to run the command \"%s\"" % (command))
@@ -106,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'max-potential-fid']
+            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift']
             JsonFile = JsonOutputFilepath
 
             js = json.load(open(JsonFile))
