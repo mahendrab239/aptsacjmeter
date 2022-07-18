@@ -106,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'largest-contentful-paint', 'first-meaningful-paint', 'speed-index', 'total-blocking-time', 'max-potential-fid', 'cumulative-layout-shift']
+            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift']
             JsonFile = JsonOutputFilepath
 
             js = json.load(open(JsonFile))
@@ -115,14 +115,14 @@ for InputfileUrls in inputfile.readlines():
             loopexit = 0
             for MetrixId in RequiresAduits:
                 title = JsonObj[MetrixId]['title']
-                if 'numericValue' in JsonObj[MetrixId]:
-                    stats = JsonObj[MetrixId]['numericValue']
+                if 'displayValue' in JsonObj[MetrixId]:
+                    stats = JsonObj[MetrixId]['displayValue']
                     # if MainMat not 'max-potential-fid':
-                    stats = float(stats) / 1000
-                    stats = round(stats, 3)
+                    stats = float(stats)
+                    # stats = round(stats, 3)
                     Result[title] = stats
                     ResultSum[title] = stats
-                    # print("%s = %s  Sec" % (title, stats))
+                    print("%s = %s  Sec" % (title, stats))
                 else:
                     loopexit = 1
 
@@ -142,7 +142,7 @@ for InputfileUrls in inputfile.readlines():
                     PerformanceScore = int(score * 100)
                     Scores[PerformanceTitle] = PerformanceScore
                     ResultSum[PerformanceTitle] = PerformanceScore
-                    # print("%s = %s  " %(PerformanceTitle, PerformanceScore))
+                    print("%s = %s  " %(PerformanceTitle, PerformanceScore))
                 else:
                     print('Score data not availible')
                     Scores[PerformanceTitle] = ''
