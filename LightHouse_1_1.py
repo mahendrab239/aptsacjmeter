@@ -167,7 +167,7 @@ for InputfileUrls in inputfile.readlines():
 
             with open(Fullpath, mode=mode) as ResultFile:
                 csv_writerObj = csv.writer(ResultFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                csv_writerObj.writerow(['ScoreName', 'Score Percentage'])
+                # csv_writerObj.writerow(['ScoreName', 'Score Percentage'])
 
                 values = [TestUrl]
                 for Scorehead in Scores:
@@ -196,9 +196,9 @@ for InputfileUrls in inputfile.readlines():
 
                 ResultSum['Test Status'] = TestResult
 
-                csv_writerObj.write(['Metrix', 'Metrix in Seconds'])
-                for result31 in Result:
-                csv_writerObj.write([result31, Result[result31]])
+                # csv_writerObj.write(['Metrix', 'Metrix in Seconds'])
+                # for result31 in Result:
+                # csv_writerObj.write([result31, Result[result31]])
             ResultFile.close()
             ResultSum['Test Status'] = Testurlstatus
             TestResult[TestUrl] = ResultSum
