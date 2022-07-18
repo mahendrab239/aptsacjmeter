@@ -115,11 +115,11 @@ for InputfileUrls in inputfile.readlines():
             loopexit = 0
             for MetrixId in RequiresAduits:
                 title = JsonObj[MetrixId]['title']
-                if 'displayValue' in JsonObj[MetrixId]:
-                    stats = JsonObj[MetrixId]['displayValue']
+                if 'numericValue' in JsonObj[MetrixId]:
+                    stats = JsonObj[MetrixId]['numericValue']
                     # if MainMat not 'max-potential-fid':
-                    stats = str(stats) 
-                    # stats = round(stats, 1)
+                    stats = float(stats) / 1000
+                    stats = round(stats, 3)
                     Result[title] = stats
                     ResultSum[title] = stats
                     print("%s = %s  Sec" % (title, stats))
