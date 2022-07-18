@@ -71,9 +71,9 @@ for InputfileUrls in inputfile.readlines():
             defaultConfig = "mobile"
             
             if configtype == defaultConfig:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --extra-headers=/report/Lighthouse-headers.json  --config-path=/report/lighthouse-mobile-config.js  --output=json --output=html"
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-mobile-config.js --output=json --output=html"
             else:
-                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --extra-headers=/report/Lighthouse-headers.json  --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
+                LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-desktop-config.js --output=json --output=html"
             
             #LitehouseArgs = "--chrome-flags='--headless --disable-gpu --disable-dev-shm-usage --no-sandbox' --config-path=/report/lighthouse-configtype-config.js --output=json --output=html"
             #LitehouseArgs = "--chrome-flags='--headless --no-sandbox' --preset="
@@ -106,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'max-potential-fid', 'total-blocking-time', 'cumulative-layout-shift', 'largest-contentful-paint']
+            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'max-potential-fid']
             JsonFile = JsonOutputFilepath
 
             js = json.load(open(JsonFile))
