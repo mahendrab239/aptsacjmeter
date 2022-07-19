@@ -120,8 +120,8 @@ for InputfileUrls in inputfile.readlines():
                     stats = JsonObj[MetrixId]['displayValue']
                     # if MainMat not 'max-potential-fid':
                     # stats = float(stats) / 1000
-                    stats = int(re.search(r'\d+', stats).group())
-                    # stats = round(stats, 1)
+                    stats = float(re.search(r'\d+', stats).group())
+                    stats = round(stats, 2)
                     Result[title] = stats
                     ResultSum[title] = stats
                     print("%s = %s  Sec" % (title, stats))
