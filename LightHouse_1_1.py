@@ -1,6 +1,5 @@
 from __future__ import division
 import json
-# import re
 import os, csv, traceback, sys
 from datetime import datetime
 from os import path
@@ -107,7 +106,7 @@ for InputfileUrls in inputfile.readlines():
 
             # print "Results are below"
             # JsonOutputFilepath = r'C:\Users\ankyadav3\PycharmProjects\lighthouse\www.flipkart.com_2020-01-20_11-03-22.report.json'
-            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift']
+            RequiresAduits = ['first-contentful-paint', 'first-meaningful-paint', 'speed-index', 'interactive', 'largest-contentful-paint', 'total-blocking-time']
             RequiredAduits = ['cumulative-layout-shift']
             JsonFile = JsonOutputFilepath
 
@@ -121,8 +120,7 @@ for InputfileUrls in inputfile.readlines():
                     stats = JsonObj[MetrixId]['numericValue']
                     # if MainMat not 'max-potential-fid':
                     stats = float(stats) / 1000
-                    # stats = float(re.search(r'\d+', stats).group())
-                    stats = round(stats, 2)
+                    stats = round(stats, 3)
                     Result[title] = stats
                     ResultSum[title] = stats
                     print("%s = %s  Sec" % (title, stats))
@@ -133,9 +131,8 @@ for InputfileUrls in inputfile.readlines():
                 title = JsonObj[MetrixId]['title']
                 if 'numericValue' in JsonObj[MetrixId]:
                     stats = JsonObj[MetrixId]['numericValue']
-                    # if MainMat not 'max-potential-fid':
                     stats = float(stats) 
-                    stats = round(stats, 2)
+                    stats = round(stats, 3)
                     Result[title] = stats
                     ResultSum[title] = stats
                     print("%s = %s " % (title, stats))
