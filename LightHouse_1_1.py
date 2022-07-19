@@ -1,5 +1,6 @@
 from __future__ import division
 import json
+import re
 import os, csv, traceback, sys
 from datetime import datetime
 from os import path
